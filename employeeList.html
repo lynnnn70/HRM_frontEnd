@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tables / General - NiceAdmin Bootstrap Template</title>
+  <title>HRMM_Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -335,7 +337,7 @@
         </ul>
       </li><!-- End System Nav -->
 
-      
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -422,90 +424,115 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Employee</h1>
+      <h1>員工查詢</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">General</li>
+          <li class="breadcrumb-item">員工管理</li>
+          <li class="breadcrumb-item active">員工查詢</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
     <section class="section">
       <div class="row">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">員工列表</h5>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">員工列表</h5>
 
-              <div class="search-bar">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
-                  <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-                  <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                </form>
-              </div><!-- End Search Bar -->               
-                  <li class="nav-item d-block d-lg-none">
-                    <a class="nav-link nav-icon search-bar-toggle " href="#">
-                      <i class="bi bi-search"></i>
-                    </a>
-                  </li><!-- End Search Icon-->
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="search-bar">
+                  <form class="search-form d-flex align-items-center" method="POST" action="#">
+                    <input type="text" name="query" placeholder="Search" title="Enter search keyword" style="width: 350px">
+                    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                  </form>
+                </div><!-- End Search Bar -->
+              </div>
+              <div class="col-lg-6"> <!-- 控制form-select 區域(寬度) -->
+                <div class="col-lg-6">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <!-- form-select End -->
+              </div>
 
-              <p><code>輸入員工姓名/編號/部門編號進行搜尋</code> </p>
-              <!-- Bordered Table -->
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Start Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>2016-05-25</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- End Bordered Table -->
 
-              <p><a href="https://getbootstrap.com/docs/5.0/utilities/borders/#border-color" target="_blank">Border color utilities</a> can be added to change colors:</p>
+
+
+
 
             </div>
+            <li class="nav-item d-block d-lg-none">
+              <a class="nav-link nav-icon search-bar-toggle " href="#">
+                <i class="bi bi-search"></i>
+              </a>
+            </li><!-- End Search Icon-->
+
+            <p><code>輸入員工姓名/編號/部門編號進行搜尋</code> </p>
+
+
+
+            <!-- Bordered Table -->
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Start Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Brandon Jacob</td>
+                  <td>Designer</td>
+                  <td>28</td>
+                  <td>2016-05-25</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Bridie Kessler</td>
+                  <td>Developer</td>
+                  <td>35</td>
+                  <td>2014-12-05</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Ashleigh Langosh</td>
+                  <td>Finance</td>
+                  <td>45</td>
+                  <td>2011-08-12</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Angus Grady</td>
+                  <td>HR</td>
+                  <td>34</td>
+                  <td>2012-06-11</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>Raheem Lehner</td>
+                  <td>Dynamic Division Officer</td>
+                  <td>47</td>
+                  <td>2011-04-19</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Bordered Table -->
+
+            <p><a href="https://getbootstrap.com/docs/5.0/utilities/borders/#border-color" target="_blank">Border color
+                utilities</a> can be added to change colors:</p>
+
           </div>
+        </div>
       </div>
     </section>
 
@@ -525,7 +552,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
