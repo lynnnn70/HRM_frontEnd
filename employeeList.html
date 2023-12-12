@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -30,6 +30,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets\css\style.css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/6767d9ab33.js" crossorigin="anonymous"></script>
+
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -278,14 +281,14 @@
 
       <li class="nav-item">
         <a class="nav-link " href="index.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <i class="fa-solid fa-house"></i>
+          <span>首頁</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>部門管理</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-regular fa-building"></i><span>部門管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -303,7 +306,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>員工管理</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-regular fa-user"></i><span>員工管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -321,7 +324,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>系統管理</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-gear"></i><span>系統管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -336,86 +339,6 @@
           </li>
         </ul>
       </li><!-- End System Nav -->
-
-
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-heading">Pages</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person"></i>
-          <span>Profile</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
-        </a>
-      </li><!-- End Error 404 Page Nav -->
-
 
     </ul>
 
@@ -444,15 +367,15 @@
               <div class="col-lg-6">
                 <div class="search-bar">
                   <form class="search-form d-flex align-items-center" method="POST" action="#">
-                    <input type="text" name="query" placeholder="Search" title="Enter search keyword" style="width: 350px">
+                    <input type="text" name="query" placeholder="員工姓名" title="Enter search keyword" style="width: 350px">
                     <button type="submit" title="Search"><i class="bi bi-search"></i></button>
                   </form>
-                </div><!-- End Search Bar -->
+                </div><!-- End NameSearch Bar -->
               </div>
               <div class="col-lg-6"> <!-- 控制form-select 區域(寬度) -->
                 <div class="col-lg-6">
                   <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
+                    <option selected>選擇部門</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -460,70 +383,80 @@
                 </div>
                 <!-- form-select End -->
               </div>
+            </div>
 
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="search-bar">
+                  <form class="search-form d-flex align-items-center" method="POST" action="#">
+                    <input type="text" name="query" placeholder="員工編號" title="Enter search keyword" style="width: 350px">
+                    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                  </form>
+                </div><!-- End Search Bar -->
+              </div>
 
-
-
-
+              <!-- <div class="container">
+                <div class="row">
+                  <div class='col-sm-6'>
+                    <div class="form-group">
+                      <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  -->
+              <!-- End DateTimePicker
 
             </div>
             <li class="nav-item d-block d-lg-none">
               <a class="nav-link nav-icon search-bar-toggle " href="#">
                 <i class="bi bi-search"></i>
               </a>
-            </li><!-- End Search Icon-->
+            </li>-->
+            <!-- End Search Icon-->
 
-            <p><code>輸入員工姓名/編號/部門編號進行搜尋</code> </p>
+                  
+      
 
 
 
             <!-- Bordered Table -->
-            <table class="table table-bordered">
+            <table class="table table-bordered mt-4">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Position</th>
-                  <th scope="col">Age</th>
-                  <th scope="col">Start Date</th>
+                  <th scope="col" class="col-lg-1">#</th>
+                  <th scope="col" class="col-lg-2">員工編號</th>
+                  <th scope="col" class="col-lg-2">部門編號</th>
+                  <th scope="col" class="col-lg-3">員工姓名</th>
+                  <th scope="col" class="col-lg-2">職稱</th>
+                  <th scope="co1" class="col-lg-1">詳細資料</th>
+                  <th scope="col" class="col-lg-1">資料修改</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Brandon Jacob</td>
-                  <td>Designer</td>
-                  <td>28</td>
-                  <td>2016-05-25</td>
+                  <td>J844</td>
+                  <td>A111</td>
+                  <td>Sherry</td>
+                  <td>Specialist</td>
+                  <td><i class="fa-solid fa-circle-info"></i></td>
+                  <td><i class="fa-regular fa-pen-to-square"></i></td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>Bridie Kessler</td>
-                  <td>Developer</td>
-                  <td>35</td>
-                  <td>2014-12-05</td>
+                  <td>C976</td>
+                  <td>B666</td>
+                  <td>Grace</td>
+                  <td>Manager</td>
+                  <td>icon</td>
+                  <td>icon</td>
                 </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Ashleigh Langosh</td>
-                  <td>Finance</td>
-                  <td>45</td>
-                  <td>2011-08-12</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Angus Grady</td>
-                  <td>HR</td>
-                  <td>34</td>
-                  <td>2012-06-11</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Raheem Lehner</td>
-                  <td>Dynamic Division Officer</td>
-                  <td>47</td>
-                  <td>2011-04-19</td>
-                </tr>
+                               
               </tbody>
             </table>
             <!-- End Bordered Table -->
@@ -567,6 +500,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 
 </body>
 
