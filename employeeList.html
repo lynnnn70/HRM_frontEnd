@@ -362,20 +362,22 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">員工列表</h5>
-
+            <!-- 搜尋欄位 卡片 -->
+            <!-- <div class="row">
+            <div class="card" style="width: 80%;"> -->
 
             <div class="container">
               <div class="row">
-                  <label for="inputempName" class="col-lg-1 col-form-label">員工姓名</label>
+                 <label for="inputempName" class="col-lg-1 col-form-label">員工姓名</label>   <!-- 格子沒對齊 -->
                   <div class="col-lg-4">
-                    <input type="email" class="form-control" style="width: 350px;">
+                    <input type="email" class="form-control " style="width: 350px;">
                   </div>
                 <!-- End NameSearch Bar -->
 
-                <div class="col-lg-6">
-                  <div class="row">
-                    <label class="col-lg-2 col-form-label">部門編號</label>
-                    <div class="col-lg-4">
+                <div class="col-lg-6 col-md-7 col-sm-8 ms-3">
+                  <div class="row  ms-5">
+                    <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">部門編號</label>
+                    <div class="col-lg-4 col-md-5 col-sm-8">
                       <select class="form-select" aria-label="Default select example"  style="width: 350px;">
                         <option selected>選擇部門</option>
                         <option value="1">One</option>
@@ -390,17 +392,17 @@
 
               <div class="row">
                 <div class="col-lg-5">
-                  <div class="row mt-4">
+                  <div class="row mt-4 me-2">
                     <label for="inputEmail" class="col-lg-2 col-form-label">員工編號</label>
                         <div class="col-lg-4">
-                      <input type="empId" class="form-control mx-3" style="width: 350px;">
+                      <input type="empId" class="form-control mx-2" style="width: 350px;">
                         </div>
                   </div>
                 </div>
                 <!-- End EmpId Bar -->
               
-                <div class="col-lg-6">
-                  <div class="row mt-4">
+                <div class="col-lg-6  col-md-7 col-sm-8 ms-3">
+                  <div class="row mt-4  ms-5">
                     <label for="inputDate" class="col-sm-2 col-form-label">入職日期</label>
                       <div class="col-lg-4">
                       <input type="date" class="form-control" style="width: 350px;">
@@ -410,6 +412,19 @@
                 <!-- End hireDate -->
               </div>
           </div>
+
+        <!-- </div> -->
+
+         
+        <!-- <div class="card" style="width: 20%;"> -->
+                <div class="container">
+            <div class="d-grid gap-2 mt-3">
+              <button class="btn btn-primary" type="button">搜尋  <i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+          </div>
+
+          </div>
+        <!-- </div> -->
                   
       
 
