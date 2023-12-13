@@ -347,133 +347,84 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>員工查詢</h1>
+      <h1>員工修改</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">員工管理</li>
-          <li class="breadcrumb-item active">員工查詢</li>
+          <li class="breadcrumb-item active">員工修改</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">員工列表</h5>
-            <!-- 搜尋欄位 卡片 -->
-            <!-- <div class="row">
-            <div class="card" style="width: 80%;"> -->
-
-            <div class="container">
-              <div class="row">
-                 <label for="inputempName" class="col-lg-1 col-form-label">員工姓名</label>   <!-- 格子沒對齊 -->
-                  <div class="col-lg-4">
-                    <input type="email" class="form-control " style="width: 350px;">
-                  </div>
-                <!-- End NameSearch Bar -->
-
-                <div class="col-lg-6 col-md-7 col-sm-8 ms-3">
-                  <div class="row  ms-5">
-                    <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">部門編號</label>
-                    <div class="col-lg-4 col-md-5 col-sm-8">
-                      <select class="form-select" aria-label="Default select example"  style="width: 350px;">
-                        <option selected>選擇部門</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                </div>
-                </div>
-                <!-- form-select End -->
-              </div>
-
-              <div class="row">
-                <div class="col-lg-5">
-                  <div class="row mt-4 me-2">
-                    <label for="inputEmail" class="col-lg-2 col-form-label">員工編號</label>
-                    <div class="col-lg-4">
-                      <input type="empId" class="form-control mx-2" style="width: 350px;">
-                    </div>
-                  </div>
-                </div>
-                <!-- End EmpId Bar -->
-              
-                <div class="col-lg-6  col-md-7 col-sm-8 ms-3">
-                  <div class="row mt-4  ms-5">
-                    <label for="inputDate" class="col-sm-2 col-form-label">入職日期</label>
-                      <div class="col-lg-4">
-                      <input type="date" class="form-control" style="width: 350px;">
-                      </div>
-                  </div>
-                </div>
-                <!-- End hireDate -->
-              </div>
-          </div>
-
-        <!-- </div> -->
-
-         
-        <!-- <div class="card" style="width: 20%;"> -->
-          <div class="container">
-            <div class="d-grid gap-2 mt-3">
-              <button class="btn btn-primary" type="button">搜尋  <i class="fa-solid fa-magnifying-glass"></i></button>
+    <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="d-flex align-items-center">
+            <h5 class="card-title">員工資料修改</h5>
             </div>
           </div>
 
-          </div>
-        <!-- </div> -->
-                  
-      
+          <!-- General Form Elements -->
+          <form>
+            <div class="row mb-3">
+              <label for="inputText" class="col-sm-2 col-form-label">員工姓名</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="inputEmail" class="col-sm-2 col-form-label">員工編號</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control">
+              </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">部門編號</label>
+                <div class="col-sm-10">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+            <div class="row mb-3">
+              <label for="inputNumber" class="col-sm-2 col-form-label">職稱</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control">
+              </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">薪資</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">獎金</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control">
+                </div>
+              </div>
+            <div class="row mb-3">
+              <label for="inputDate" class="col-sm-2 col-form-label">入職日期</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">確認修改</button>
+              </div>
+            </div>
 
+          </form><!-- End General Form Elements -->
 
-
-            <!-- Bordered Table -->
-            <table class="table table-bordered mt-4">
-              <thead>
-                <tr>
-                  <th scope="col" class="col-lg-1">#</th>
-                  <th scope="col" class="col-lg-2">員工編號</th>
-                  <th scope="col" class="col-lg-2">部門編號</th>
-                  <th scope="col" class="col-lg-3">員工姓名</th>
-                  <th scope="col" class="col-lg-2">職稱</th>
-                  <th scope="co1" class="col-lg-1">詳細資料</th>
-                  <th scope="col" class="col-lg-1">資料修改</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>J844</td>
-                  <td>A111</td>
-                  <td>Sherry</td>
-                  <td>Specialist</td>
-                  <td><i class="fa-solid fa-circle-info"></i></td>
-                  <td><i class="fa-regular fa-pen-to-square"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>C976</td>
-                  <td>B666</td>
-                  <td>Grace</td>
-                  <td>Manager</td>
-                  <td>icon</td>
-                  <td>icon</td>
-                </tr>
-                               
-              </tbody>
-            </table>
-            <!-- End Bordered Table -->
-
-            <p><a href="https://getbootstrap.com/docs/5.0/utilities/borders/#border-color" target="_blank">Border color
-                utilities</a> can be added to change colors:</p>
-
-          </div>
         </div>
       </div>
-    </section>
+
 
   </main><!-- End #main -->
 
