@@ -23,8 +23,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
@@ -32,8 +30,8 @@
   <link href="assets\css\style.css" rel="stylesheet">
 
   <script src="https://kit.fontawesome.com/6767d9ab33.js" crossorigin="anonymous"></script>
-  
-  <!-- Jquery -->
+
+    <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
@@ -291,10 +289,10 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#dept-nav" data-bs-toggle="collapse" href="#">
           <i class="fa-regular fa-building"></i><span>部門管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="dept-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="forms-elements.html">
               <i class="bi bi-circle"></i><span>部門查詢</span>
@@ -309,10 +307,10 @@
       </li><!-- End Department Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#emp-nav" data-bs-toggle="collapse" href="#">
           <i class="fa-regular fa-user"></i><span>員工管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="emp-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="employeeList.html">
               <i class="bi bi-circle"></i><span>員工查詢</span>
@@ -327,10 +325,10 @@
       </li><!-- End Department Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#sys-nav" data-bs-toggle="collapse" href="#">
           <i class="fa-solid fa-gear"></i><span>系統管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="sys-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="forms-elements.html">
               <i class="bi bi-circle"></i><span>使用者帳號管理</span>
@@ -346,89 +344,118 @@
 
     </ul>
 
-  </aside><!-- End Sidebar-->
+  </aside>
+  <!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>新增員工</h1>
+      <h1>部門查詢</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">員工管理</li>
-          <li class="breadcrumb-item active">新增員工</li>
+          <li class="breadcrumb-item">部門管理</li>
+          <li class="breadcrumb-item active">部門查詢</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- ***************End Page Title*************** -->
 
-    <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="d-flex align-items-center">
-            <h5 class="card-title">員工資料填寫</h5>
-            </div>
+    <section class="section">
+      <div class="row">
+        <div class="card">
+          <div class="card-body">
+                <h5 class="card-title">部門列表</h5>
+
+                <div class="container">
+                  <div class="row">
+                    <label for="inputempName" class="col-lg-1 col-form-label">部門名稱</label> 
+                      <div class="col-lg-4">
+                        <input type="text" class="form-control " style="width: 330px;">
+                      </div>
+                    <!-- End NameSearch Bar -->
+
+                    <div class="col-lg-6 ms-3">
+                      <div class="row ms-4">
+                        <label class="col-lg-2 col-form-label">部門編號</label>
+                        <div class="col-lg-8">
+                          <select class="form-select" id="deptId_selectList" name="deptId_select" aria-label="Default select example"  style="width: 350px;">
+                            <option selected>選擇部門</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- form-select End -->
+                  </div>
+
+                 
+                </div>
+                <div class="container">
+                  <div class="d-grid gap-2 mt-3">
+                    <button class="btn btn-primary" type="button" id="search_button">搜尋  <i class="fa-solid fa-magnifying-glass"></i></button>
+                  </div>
+                </div>
+
           </div>
 
-          <!-- General Form Elements -->
-          <form>
-            <div class="row mb-3">
-              <label for="inputText" class="col-sm-2 col-form-label">員工姓名</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control">
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="inputEmail" class="col-sm-2 col-form-label">員工編號</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control">
-              </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-2 col-form-label">部門編號</label>
-                <div class="col-sm-10">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-            <div class="row mb-3">
-              <label for="inputNumber" class="col-sm-2 col-form-label">職稱</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control">
-              </div>
-            </div>
-            <div class="row mb-3">
-                <label for="inputNumber" class="col-sm-2 col-form-label">薪資</label>
-                <div class="col-sm-10">
-                  <input type="number" class="form-control">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputNumber" class="col-sm-2 col-form-label">獎金</label>
-                <div class="col-sm-10">
-                  <input type="number" class="form-control">
-                </div>
-              </div>
-            <div class="row mb-3">
-              <label for="inputDate" class="col-sm-2 col-form-label">入職日期</label>
-              <div class="col-sm-10">
-                <input type="date" class="form-control">
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">資料送出</button>
-              </div>
-            </div>
 
-          </form><!-- End General Form Elements -->
+
+                <!-- Bordered Table -->
+                <div class="table-responsive">
+                <table class="table table-bordered mt-4">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="col-lg-1">#</th>
+                      <th scope="col" class="col-lg-3">部門編號</th>
+                      <th scope="col" class="col-lg-3">部門名稱</th>
+                      <th scope="col" class="col-lg-3">部門地點</th>
+                      <th scope="col" class="col-lg-2">修改</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>A111</td>
+                      <td>Sherry</td>
+                      <td>Specialist</td>
+                      <td><i class="fa-regular fa-pen-to-square"></i></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>B666</td>
+                      <td>Grace</td>
+                      <td>Manager</td>
+                      <td>icon</td>
+                    </tr>
+                                  
+                  </tbody>
+                </table>
+                <!-- End Bordered Table -->
+               <div class="mt-3">
+                 <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                      <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+                <!-- End pagination -->
+
 
         </div>
       </div>
-
+    </section>
 
   </main><!-- End #main -->
 
@@ -452,16 +479,11 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="employeeList.js"></script>
 
 </body>
 

@@ -23,8 +23,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
@@ -32,6 +30,10 @@
   <link href="assets\css\style.css" rel="stylesheet">
 
   <script src="https://kit.fontawesome.com/6767d9ab33.js" crossorigin="anonymous"></script>
+
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
 
   <!-- =======================================================
@@ -287,10 +289,10 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#dept-nav" data-bs-toggle="collapse" href="#">
           <i class="fa-regular fa-building"></i><span>部門管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="dept-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="forms-elements.html">
               <i class="bi bi-circle"></i><span>部門查詢</span>
@@ -305,10 +307,10 @@
       </li><!-- End Department Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#emp-nav" data-bs-toggle="collapse" href="#">
           <i class="fa-regular fa-user"></i><span>員工管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="emp-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="employeeList.html">
               <i class="bi bi-circle"></i><span>員工查詢</span>
@@ -323,10 +325,10 @@
       </li><!-- End Department Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#sys-nav" data-bs-toggle="collapse" href="#">
           <i class="fa-solid fa-gear"></i><span>系統管理</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="sys-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="forms-elements.html">
               <i class="bi bi-circle"></i><span>使用者帳號管理</span>
@@ -369,15 +371,15 @@
                   <div class="row">
                     <label for="inputempName" class="col-lg-1 col-form-label">員工姓名</label> 
                       <div class="col-lg-4">
-                        <input type="email" class="form-control " style="width: 330px;">
+                        <input type="text" class="form-control " style="width: 330px;">
                       </div>
                     <!-- End NameSearch Bar -->
 
-                    <div class="col-lg-6  ms-3">
+                    <div class="col-lg-6 ms-3">
                       <div class="row ms-4">
                         <label class="col-lg-2 col-form-label">部門編號</label>
                         <div class="col-lg-4">
-                          <select class="form-select" aria-label="Default select example"  style="width: 350px;">
+                          <select class="form-select" id="deptId_selectList" name="deptId_select" aria-label="Default select example"  style="width: 350px;">
                             <option selected>選擇部門</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -390,14 +392,14 @@
                   </div>
 
                   <div class="row">
-                    <label for="inputempName" class="col-lg-1 col-form-label mt-4">員工編號</label> 
+                    <label for="inputempId" class="col-lg-1 col-form-label mt-4">員工編號</label> 
                     <div class="col-lg-4">
-                      <input type="email" class="form-control mt-4" style="width: 330px;">
+                      <input type="number" class="form-control mt-4" style="width: 330px;">
                     </div>
                     <!-- End EmpId Bar -->
                   
-                    <div class="col-lg-6  ms-3">
-                      <div class="row mt-4  ms-4">
+                    <div class="col-lg-6 ms-3">
+                      <div class="row mt-4 ms-4">
                         <label for="inputDate" class="col-sm-2 col-form-label">入職日期</label>
                           <div class="col-lg-4">
                           <input type="date" class="form-control" style="width: 350px;">
@@ -409,14 +411,11 @@
                 </div>
                 <div class="container">
                   <div class="d-grid gap-2 mt-3">
-                    <button class="btn btn-primary" type="button">搜尋  <i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="btn btn-primary" type="button" id="search_button">搜尋  <i class="fa-solid fa-magnifying-glass"></i></button>
                   </div>
                 </div>
 
           </div>
-
-                      
-          
 
 
 
@@ -427,10 +426,10 @@
                       <th scope="col" class="col-lg-1">#</th>
                       <th scope="col" class="col-lg-2">員工編號</th>
                       <th scope="col" class="col-lg-2">部門編號</th>
-                      <th scope="col" class="col-lg-3">員工姓名</th>
+                      <th scope="col" class="col-lg-2">員工姓名</th>
                       <th scope="col" class="col-lg-2">職稱</th>
-                      <th scope="co1" class="col-lg-1">詳細資料</th>
-                      <th scope="col" class="col-lg-1">資料修改</th>
+                      <th scope="co1" class="col-lg-2">詳細資料</th>
+                      <th scope="col" class="col-lg-1">修改</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -456,9 +455,23 @@
                   </tbody>
                 </table>
                 <!-- End Bordered Table -->
+               <div class="mt-3">
+                 <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                      <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+                <!-- End pagination -->
 
-                <p><a href="https://getbootstrap.com/docs/5.0/utilities/borders/#border-color" target="_blank">Border color
-                    utilities</a> can be added to change colors:</p>
 
         </div>
       </div>
@@ -486,16 +499,11 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="employeeList.js"></script>
 
 </body>
 
