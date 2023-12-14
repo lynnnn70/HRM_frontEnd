@@ -23,16 +23,17 @@ $(document).ready(function(){
         e.preventDefault();
         let control = true;
 
+        //讓錯誤文字只顯示一次
+        $(".error-message").remove();
+
         //按下Btn時先做輸入格式等錯誤處理
         if(inputDeptName_el.val() === null || inputDeptName_el.val().trim() === ""){
             control = false;
-            warnStr.html("請填寫部門名稱");
-            return;
+            $("<span>").html("請填寫部門名稱").css("color", "red").addClass("error-message").insertAfter("#inputDeptName");
         }
         if(inputDeptLoc_el.val() === null || inputDeptLoc_el.val().trim() === ""){
             control = false;
-            warnStr.html("請填寫部門地點");
-            return;
+            $("<span>").html("請填寫部門地點").css("color", "red").addClass("error-message").insertAfter("#inputDeptLoc"); 
         }
 
         //取得表單input資料
@@ -44,21 +45,24 @@ $(document).ready(function(){
             loc:deptLocValue
         }
   
+        if(control){
+             //使用AJAX發送請求
+            $.ajax({
+                url:'http://localhost:8080/api/addDepartment',
+                method:'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(response){
+                    //處理成功的回應
+                    console.log('資料送出成功:', response);
+                },
+                error: function(error){
+                    //處理錯誤
+                    console.error('資料送出失敗:', error);
+                }
+            });
 
-        //使用AJAX發送請求
-        $.ajax({
-            url:'http://localhost:8080/api/addDepartment',
-            method:'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(data),
-            success: function(response){
-                //處理成功的回應
-                console.log('資料送出成功', response);
-            },
-            error: function(error){
-                //處理錯誤
-                console.error('資料送出失敗:', error);
-            }
-        });
+        }
+
     });
 });
