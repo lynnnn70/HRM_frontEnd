@@ -52,10 +52,11 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 data: JSON.stringify(data),
                 success: function(response){
-                    //處理成功的回應
-                    console.log('資料送出成功:', response);
-                    if(response){
-                        console.log("新增成功");
+                    if(response.status === -6){
+                        console.log("資料重複");
+                        showWarnMsg(inputDeptName_el, "部門名稱重複");
+                    }else if(response){
+                        console.log("新增成功", response);
                     }else{
                         console.log("新增失敗");
                     }
