@@ -2,16 +2,18 @@
 let inputDeptName_el = $("#inputDeptName");
 let inputDeptLoc_el = $("#inputDeptLoc");
 
-//===== 錯誤處理 =====
-let inputDeptName = $("#inputDeptName");
-let inputDeptLoc = $("#inputDeptLoc");
+//===== 判斷錯誤 =====
+function isValid(inputElement){
+    if(inputElement.val() === null || inputElement.val().trim() === ""){
+        return false;
+    }
+    return true;
+}
 
 //===== 判斷錯誤處理新增的文字 =====
-let warnStr = $("<span>").css("color", "red");
-
-//===== 初始化 =====
-inputDeptName.html('');
-inputDeptLoc.html('');
+function showWarnMsg(inputElement , message){
+    $("<span>").html(message).css("color", "red").addClass("error_message").insertAfter(inputElement);
+}
 
 
 
@@ -24,16 +26,13 @@ $(document).ready(function(){
         let control = true;
 
         //讓錯誤文字只顯示一次
-        $(".error-message").remove();
+        $(".error_message").remove();
 
         //按下Btn時先做輸入格式等錯誤處理
-        if(inputDeptName_el.val() === null || inputDeptName_el.val().trim() === ""){
+        if(!isValid(inputDeptName_el)|| !isValid(inputDeptLoc_el)){
+            showWarnMsg(inputDeptName_el, "請填寫部門名稱");
+            showWarnMsg(inputDeptLoc_el, "請填寫部門地點");
             control = false;
-            $("<span>").html("請填寫部門名稱").css("color", "red").addClass("error-message").insertAfter("#inputDeptName");
-        }
-        if(inputDeptLoc_el.val() === null || inputDeptLoc_el.val().trim() === ""){
-            control = false;
-            $("<span>").html("請填寫部門地點").css("color", "red").addClass("error-message").insertAfter("#inputDeptLoc"); 
         }
 
         //取得表單input資料
@@ -55,14 +54,20 @@ $(document).ready(function(){
                 success: function(response){
                     //處理成功的回應
                     console.log('資料送出成功:', response);
+                    if(response){
+                        console.log("新增成功");
+                    }else{
+                        console.log("新增失敗");
+                    }
                 },
                 error: function(error){
                     //處理錯誤
                     console.error('資料送出失敗:', error);
                 }
-            });
+            }); 
 
         }
 
     });
+
 });
