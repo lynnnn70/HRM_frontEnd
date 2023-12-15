@@ -53,7 +53,7 @@ $(document).ready(function(){
                 data: JSON.stringify(data),
                 success: function(response){
                     if(response.status === -6){
-                        console.log("資料重複");
+                        console.log("資料重複", response);
                         showWarnMsg(inputDeptName_el, "部門名稱重複");
                     }else if(response){
                         console.log("新增成功", response);
