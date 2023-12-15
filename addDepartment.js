@@ -57,6 +57,13 @@ $(document).ready(function(){
                         showWarnMsg(inputDeptName_el, "部門名稱重複");
                     }else if(response){
                         console.log("新增成功", response);
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "部門新增成功!",
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
                     }else{
                         console.log("新增失敗");
                     }
